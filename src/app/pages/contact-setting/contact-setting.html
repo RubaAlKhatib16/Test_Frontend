@@ -1,0 +1,64 @@
+<div class="contact-setting-page">
+  <app-topbar></app-topbar>
+
+  <div class="contact-setting-page__breadcrumb">
+    <i class="bi bi-folder2"></i>
+    <span>Contacts</span>
+    <span class="contact-setting-page__breadcrumb-active">{{ contactName }}</span>
+
+    <div class="contact-setting-page__breadcrumb-actions">
+      <button type="button" class="btn btn-outline-secondary btn-sm">Follow</button>
+      <button type="button" class="contact-setting-page__icon-btn" aria-label="Flag">
+        <i class="bi bi-flag"></i>
+      </button>
+      <button type="button" class="contact-setting-page__icon-btn" aria-label="History">
+        <i class="bi bi-clock-history"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="contact-setting-page__body">
+    <app-sidebar-profile></app-sidebar-profile>
+
+    <main class="contact-setting-page__main">
+      <div class="contact-setting-page__main-header">
+        <div>
+          <h1>Contact Setting</h1>
+          <p>Edit Your Contact Details</p>
+        </div>
+
+        <div class="contact-setting-page__main-actions">
+          <button type="button" class="contact-setting-page__link-btn" (click)="onResetClick()">
+            Reset to Default
+          </button>
+          <button type="button" class="btn btn-outline-secondary" (click)="onCancelClick()">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary" (click)="onSaveClick()">
+            Save changes
+          </button>
+        </div>
+      </div>
+
+      <div class="contact-setting-page__stats">
+        <app-stat-card
+          *ngFor="let stat of stats"
+          [label]="stat.label"
+          [value]="stat.value"
+          [unit]="stat.unit"
+          [icon]="stat.icon"
+        ></app-stat-card>
+      </div>
+
+      <div class="contact-setting-page__card">
+        <app-privacy-settings></app-privacy-settings>
+        <app-field-configuration></app-field-configuration>
+        <app-view-preview></app-view-preview>
+      </div>
+
+      <div class="contact-setting-page__card">
+        <app-contacts-table></app-contacts-table>
+      </div>
+    </main>
+  </div>
+</div>

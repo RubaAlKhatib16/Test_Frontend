@@ -1,0 +1,41 @@
+<div class="contacts-table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Contact</th>
+        <th>Position</th>
+        <th>Company</th>
+        <th>Nationality</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>
+          <div class="contacts-table__contact-cell">
+           <img [src]="contact.avatarUrl" class="contacts-table__avatar" alt="avatar">
+            <div class="contacts-table__name-block">
+              <span class="contacts-table__name-en">{{ contact.nameEn }}</span>
+              <span class="contacts-table__name-ar">{{ contact.nameAr }}</span>
+            </div>
+          </div>
+        </td>
+        <td>{{ contact.position }}</td>
+        <td>{{ contact.company }}</td>
+        <td>
+          <span class="contacts-table__nationality">
+            <img [src]="'https://flagcdn.com/w40/' + contact.flag + '.png'" class="contacts-table__flag" alt="" />
+            {{ contact.nationality }}
+          </span>
+        </td>
+        <td>{{ contact.email }}</td>
+        <td class="contacts-table__actions-cell">
+          <button type="button" class="contacts-table__more-btn" aria-label="More actions">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

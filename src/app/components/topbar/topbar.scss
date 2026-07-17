@@ -1,0 +1,184 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__logo {
+    color: var(--brand-primary);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__meeting {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__time-badge {
+    background: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+  }
+
+  &__meeting-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+  }
+
+  &__meeting-label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--brand-primary);
+    font-weight: 600;
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    display: inline-block;
+  }
+
+  &__meeting-title {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__create-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  &__icon-btn {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+
+    &:hover {
+      background: var(--bg-light);
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #ef4444;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+  }
+
+  &__timezone {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    white-space: nowrap;
+  }
+
+  &__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+
+/* -------- Responsive -------- */
+
+@media (max-width: 992px) {
+  .topbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .topbar__meeting-title {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar__right {
+    gap: 0.4rem;
+  }
+
+  .topbar__timezone span {
+    display: none; /* يخلي بس الأيقونة ظاهرة */
+  }
+
+  .topbar__create-btn span {
+    display: none;
+  }
+
+  .topbar__create-btn {
+    padding: 0.5rem 0.65rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .topbar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .topbar__meeting {
+    display: none; /* تختفي بالكامل، تقدر تخليها إذا بدك ياها */
+  }
+
+  .topbar__right {
+    margin-inline-start: auto;
+  }
+}

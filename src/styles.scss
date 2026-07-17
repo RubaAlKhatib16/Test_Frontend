@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+/* ===================================
+   Global Styles - EPYA Contact Setting
+   =================================== */
+/* 1. Bootstrap core */
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+
+/* 2. Brand color overrides (from Figma Dev Mode) */
+:root {
+  --brand-primary: #0086ff;
+  --brand-primary-hover: #006fd6;
+  --text-dark: #1a1a1a;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --bg-light: #f7f9fc;
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --spacing-16: 1rem;
+  --spacing-8: 0.5rem;
+}
+
+/* 3. Base resets */
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* 4. RTL / LTR support
+   The `dir` attribute is toggled on <html> at runtime (see app.component.ts) */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  text-align: left;
+}
+
+/* 5. Utility overrides matching brand color */
+.btn-primary {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+
+  &:hover,
+  &:focus {
+    background-color: var(--brand-primary-hover);
+    border-color: var(--brand-primary-hover);
+  }
+}
+
+.text-brand {
+  color: var(--brand-primary) !important;
+}
+
+.contact-setting-page__card {
+  max-width: 100%;
+  overflow-x: hidden;
+}

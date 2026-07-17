@@ -1,0 +1,25 @@
+<div class="privacy-settings">
+  <div class="privacy-settings__left">
+    <div class="privacy-settings__icon">
+      <i class="bi bi-lock"></i>
+    </div>
+    <div class="privacy-settings__text">
+      <strong>Privacy Settings</strong>
+      <span>Control Your Privacy Preferences</span>
+    </div>
+  </div>
+
+  <div class="privacy-settings__right">
+    <div class="privacy-settings__icon privacy-settings__icon--globe">
+      <i class="bi bi-globe2"></i>
+    </div>
+    <div class="privacy-settings__text">
+      <strong>{{ visibility }}</strong>
+      <span>{{ visibilityDescription }}</span>
+    </div>
+
+    <button type="button" class="privacy-settings__change-btn" (click)="onChangeClick()">
+      Change
+    </button>
+  </div>
+</div>

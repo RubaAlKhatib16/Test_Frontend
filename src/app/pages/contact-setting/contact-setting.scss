@@ -1,0 +1,228 @@
+.contact-setting-page {
+  min-height: 100vh;
+  background: var(--bg-light);
+
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+  }
+
+  &__breadcrumb-active {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+
+  &__breadcrumb-actions {
+    margin-inline-start: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0.15rem 0 0;
+    }
+  }
+
+  &__main-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__link-btn {
+    border: none;
+    background: transparent;
+    color: var(--brand-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  &__card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    > * {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    > *:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+/* -------- Responsive -------- */
+
+@media (min-width: 1600px) {
+  .contact-setting-page__body {
+    max-width: 1600px;
+  }
+}
+
+/* Small laptop / large tablet */
+@media (max-width: 1200px) {
+  .contact-setting-page__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .contact-setting-page__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-setting-page__body {
+    flex-direction: column;
+  }
+
+  app-sidebar-profile {
+    width: 100%;
+  }
+}
+
+/* Tablet portrait / phablet */
+@media (max-width: 768px) {
+  .contact-setting-page__breadcrumb {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .contact-setting-page__main-header h1 {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .contact-setting-page__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-setting-page__body {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .contact-setting-page__breadcrumb {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .contact-setting-page__breadcrumb-actions {
+    margin-inline-start: 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .contact-setting-page__main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-setting-page__main-actions {
+    width: 100%;
+    flex-wrap: wrap;
+
+    .btn {
+      flex: 1 1 auto;
+      min-width: 45%;
+    }
+  }
+
+  .contact-setting-page__link-btn {
+    order: -1;
+    width: 100%;
+    text-align: left;
+  }
+}
+@media (max-width: 768px) {
+  .contacts-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 992px) {
+  .contact-setting-page__body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-setting-page__main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  app-sidebar-profile {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}

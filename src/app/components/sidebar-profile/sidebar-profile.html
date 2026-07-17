@@ -1,0 +1,66 @@
+<aside class="sidebar-profile">
+  <!-- Profile card -->
+  <div class="sidebar-profile__card">
+    <div class="sidebar-profile__card-top">
+      <img class="sidebar-profile__avatar" [src]="avatarUrl" alt="Profile photo" />
+      <button type="button" class="sidebar-profile__more" aria-label="More options">
+        <i class="bi bi-three-dots"></i>
+      </button>
+    </div>
+
+    <div class="sidebar-profile__name-row">
+      <img [src]="'https://flagcdn.com/w40/' + countryCode + '.png'" class="sidebar-profile__flag" alt="UAE flag" />
+      <span class="sidebar-profile__name">{{ nameEn }}</span>
+    </div>
+    <div class="sidebar-profile__name-ar">{{ nameAr }}</div>
+
+    <div class="sidebar-profile__job">
+      {{ jobTitle }} <span class="sidebar-profile__divider">|</span> {{ company }}
+    </div>
+
+    <div class="sidebar-profile__tags">
+      <span
+        class="sidebar-profile__tag"
+        *ngFor="let tag of tags; let i = index"
+        [class.sidebar-profile__tag--purple]="i === 1"
+      >
+        {{ tag }}
+      </span>
+    </div>
+
+    <div class="sidebar-profile__actions">
+      <button type="button" class="sidebar-profile__action-btn" aria-label="Add contact">
+        <i class="bi bi-person-plus"></i>
+      </button>
+      <button type="button" class="sidebar-profile__action-btn sidebar-profile__action-btn--active" aria-label="Settings">
+        <i class="bi bi-gear"></i>
+      </button>
+      <button type="button" class="sidebar-profile__action-btn" aria-label="Notes">
+        <i class="bi bi-file-text"></i>
+      </button>
+      <button type="button" class="sidebar-profile__action-btn" aria-label="Chat">
+        <i class="bi bi-chat"></i>
+      </button>
+      <button type="button" class="sidebar-profile__action-btn sidebar-profile__action-btn--lock" aria-label="Privacy">
+        <i class="bi bi-lock-fill"></i>
+      </button>
+    </div>
+
+    <div class="sidebar-profile__completeness">
+      <div class="sidebar-profile__progress-circle">{{ profileCompleteness }}%</div>
+      <div class="sidebar-profile__completeness-text">
+        <strong>Profile Completeness Score</strong>
+        <span>Add missing details to reach 100%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation list -->
+ <!-- Navigation list -->
+  <nav class="sidebar-profile__nav">
+    <a href="javascript:void(0)" class="sidebar-profile__nav-item" *ngFor="let item of navItems">
+      <i class="bi" [ngClass]="item.icon"></i>
+      <span>{{ item.label }}</span>
+    </a>
+  </nav>
+</aside>

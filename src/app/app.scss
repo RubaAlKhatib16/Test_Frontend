@@ -1,0 +1,26 @@
+.app-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  app-contact-setting {
+    flex: 1;
+    overflow-y: auto;
+    min-width: 0;
+  }
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    flex-direction: column;
+
+    app-contact-setting {
+      padding-bottom: 60px;
+    }
+  }
+}

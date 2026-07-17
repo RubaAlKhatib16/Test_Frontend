@@ -1,0 +1,33 @@
+<div class="view-preview">
+  <div class="view-preview__header">
+    <div class="view-preview__icon">
+      <i class="bi bi-eye"></i>
+    </div>
+    <div class="view-preview__text">
+      <strong>View and Preview</strong>
+      <span>Switch Between Light And Dark Modes.</span>
+    </div>
+  </div>
+
+  <div class="view-preview__options">
+    <div class="view-preview__option-wrapper" *ngFor="let option of options">
+      <button
+        type="button"
+        class="view-preview__card"
+        [class.view-preview__card--selected]="selectedId === option.id"
+        (click)="selectOption(option.id)"
+      >
+        <div class="view-preview__mini" [ngClass]="'view-preview__mini--' + option.layout">
+          <span class="view-preview__mini-avatar"><i class="bi bi-person-fill"></i></span>
+          <div class="view-preview__mini-lines">
+            <span class="view-preview__mini-name">{{ option.nameEn }}</span>
+            <span class="view-preview__mini-name-ar">{{ option.nameAr }}</span>
+            <span class="view-preview__mini-bar"></span>
+          </div>
+        </div>
+        <span class="view-preview__radio" [class.view-preview__radio--checked]="selectedId === option.id"></span>
+      </button>
+      <span class="view-preview__label">{{ option.label }}</span>
+    </div>
+  </div>
+</div>
