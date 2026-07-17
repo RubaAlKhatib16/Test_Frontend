@@ -1,63 +1,113 @@
-<<<<<<< HEAD
-# EpyaAssignment
+# EPYA Contact Setting — Front-End Assignment
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.7.
+A pixel-perfect, responsive Angular implementation of the "Contact Setting" page based on the provided Figma design.
 
-## Development server
+**Live Demo:** https://jolly-pothos-468733.netlify.app/
 
-To start a local development server, run:
+## Tech Stack
+
+- Angular 22 (standalone components)
+- TypeScript
+- SCSS
+- Bootstrap 5.3 (components & utility classes)
+- Bootstrap Icons
+- Vitest (unit testing)
+
+## Prerequisites
+
+Before running this project locally, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) — **v22.22.3+, v24.15.0+, or v26.x** (required by Angular 22 — earlier versions, including v18/v20, are not supported)
+- [npm](https://www.npmjs.com/) (comes bundled with Node.js)
+- [Angular CLI](https://angular.dev/tools/cli) (installed globally)
+
+To install Angular CLI globally, run:
+
+```bash
+npm install -g @angular/cli
+```
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/RubaAlKhatib16/Test_Frontend.git
+cd Test_Frontend
+```
+
+2. Install project dependencies:
+
+```bash
+npm install
+```
+
+## Running the Application Locally
+
+Start the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open your browser and navigate to:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The application will automatically reload if you change any of the source files.
 
-```bash
-ng generate --help
-```
+## Building for Production
 
-## Building
-
-To build the project run:
+To create a production build:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Running Unit Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+This runs the project's unit tests using Vitest.
 
-For end-to-end (e2e) testing, run:
+## Project Structure
 
-```bash
-ng e2e
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── main-nav-rail/       # Left-side vertical navigation
+│   │   ├── sidebar-profile/     # Contact profile sidebar card
+│   │   ├── topbar/              # Top navigation bar
+│   │   ├── stat-card/           # Reusable statistic cards
+│   │   ├── field-configuration/ # Name field configuration section
+│   │   ├── privacy-settings/    # Privacy settings section
+│   │   ├── view-preview/        # Preview mode selector
+│   │   └── contacts-table/      # Related contacts data table
+│   ├── pages/
+│   │   └── contact-setting/     # Main page composing all components
+│   ├── app.ts
+│   ├── app.html
+│   └── app.scss
+├── styles.scss                  # Global styles & Bootstrap imports
+public/
+└── images/                      # Static assets (avatars, icons)
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Key Features
 
-## Additional Resources
+- **Responsive Design:** Fully responsive layout across desktop, tablet, and mobile breakpoints using CSS Grid, Flexbox, and media queries.
+- **Reusable Components:** UI is broken down into standalone, reusable Angular components to avoid duplication.
+- **Bootstrap Integration:** Uses Bootstrap utility classes and components alongside custom SCSS for consistent styling.
+- **RTL/LTR Ready:** Layout structured to support both English (LTR) and Arabic (RTL) content, with contact names and details displayed bilingually.
+- **Scalable SCSS Structure:** Each component has its own scoped stylesheet following BEM-like naming conventions.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# Test_Frontend
->>>>>>> 7444099f62848c258e96e15c76b27efec438e876
+## Notes
+
+This assignment focuses on front-end implementation only — no backend/API integration was required per the assignment scope. All contact data shown in the table is static/mock data for demonstration purposes.
